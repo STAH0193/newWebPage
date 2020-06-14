@@ -1,0 +1,83 @@
+var modal = document.getElementById("myModalOne");
+var imgOne = document.getElementById("sigFlowReel");
+var modalImg = document.getElementById("sigFlowModal");
+
+imgOne.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("close") [0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+/**ELI PAGE */
+var modalTwo = document.getElementById("myModalTwo");
+var imgTwo = document.getElementById("eliReel");
+var modalImgTwo = document.getElementById("eliModal");
+
+imgTwo.onclick = function() {
+    modalTwo.style.display = "block";
+    modalImgTwo.src = this.src;
+    captionTextTwo.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeTwo") [0];
+
+span.onclick = function() {
+    modalTwo.style.display = "none";
+}
+
+/** LIL MAYOR */
+var modalThree = document.getElementById("myModalThree");
+var imgThree = document.getElementById("lilFont");
+var modalImgThree = document.getElementById("lilModal");
+
+imgThree.onclick = function() {
+    modalThree.style.display = "block";
+    modalImgThree.src = this.src;
+    captionTextThree.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeThree") [0];
+
+span.onclick = function() {
+    modalThree.style.display = "none";
+}
+
+/** WEB AUDIO */
+var modalFour = document.getElementById("myModalFour");
+var imgFour = document.getElementById("webAudioReel");
+var modalImgFour = document.getElementById("audioModal");
+
+imgFour.onclick = function() {
+    modalFour.style.display = "block";
+    modalImgFour.src = this.src;
+    captionTextFour.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeFour") [0];
+
+span.onclick = function() {
+    modalFour.style.display = "none";
+}
+
+/** POSTER ONE */
+var modalFive = document.getElementById("myModalFour");
+var imgFive = document.getElementById("webAudioReel");
+var modalImgFive = document.getElementById("audioModal");
+
+imgFive.onclick = function() {
+    modalFive.style.display = "block";
+    modalImgFive.src = this.src;
+    captionTextFive.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeFive") [0];
+
+span.onclick = function() {
+    modalFive.style.display = "none";
+}
