@@ -1,6 +1,30 @@
 @media only screen and (max-width: 400px) {
-    .selfie_nine{
+    #dragMe{
         width: 400px;
         bottom: 100px;
     }
+    #dragMe2{
+        width: 400px;
+        bottom: 100px;
+    }
+    #dragMe3{
+        width: 400px;
+        bottom: 100px;
+    }
+    .eventWrapperAbout {
+        width: 90%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .aboutParagraph {
+        font-size: 18px;
+    }
+    .width {
+       padding-bottom: 10px;
+    }
+    .eventWrapper {
+        width: 80%;
+
+    }
+
 }
