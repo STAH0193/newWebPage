@@ -49,7 +49,7 @@ footer {
     width: 500px;
     position: fixed;
     bottom: 8px;
- 
+	cursor: pointer;
 }
 
 h1 {
