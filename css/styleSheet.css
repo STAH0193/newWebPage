@@ -241,9 +241,7 @@ a:active {
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(2, 300px);
 }
-.sixteen {
 
-}
 
 #eliReel {
 	width: 300px;
