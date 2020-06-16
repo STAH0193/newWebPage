@@ -172,7 +172,6 @@ a:active {
 
 .shadow {
 	box-shadow: #ff6d6d 15px 15px 15px;
-	mix-blend-mode: color-dodge;
 }
 
 .margin {
