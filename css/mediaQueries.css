@@ -24,7 +24,10 @@
     }
     .eventWrapper {
         width: 80%;
+    }
 
+    .aboutPage {
+        mix-blend-mode: normal;
     }
 
 }
