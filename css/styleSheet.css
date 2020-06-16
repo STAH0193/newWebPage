@@ -118,15 +118,7 @@ a:active {
 	margin-bottom: 20px;
 	font-size: 14px;
 }
-.aboutPage {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url('/images/backgroundAboutTwo.png');
-    background-size: cover;
-    mix-blend-mode: difference;
-    
-}
+
 
 
 .groupText:hover {
