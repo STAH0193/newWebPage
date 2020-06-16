@@ -1,15 +1,15 @@
 @media only screen and (max-width: 400px) {
     #dragMe{
-        width: 400px;
-        bottom: 100px;
+        width: 300px;
+        bottom: 0px;
     }
     #dragMe2{
-        width: 400px;
-        bottom: 100px;
+        width: 300px;
+        bottom: 0px;
     }
     #dragMe3{
-        width: 400px;
-        bottom: 100px;
+        width: 300px;
+        bottom: 0px;
     }
     .eventWrapperAbout {
         width: 90%;
