@@ -33,8 +33,8 @@ span.onclick = function() {
 
 /** LIL MAYOR */
 var modalThree = document.getElementById("myModalThree");
-var imgThree = document.getElementById("lilFont");
-var modalImgThree = document.getElementById("lilModal");
+var imgThree = document.getElementById("bmb");
+var modalImgThree = document.getElementById("bmbModal");
 
 imgThree.onclick = function() {
     modalThree.style.display = "block";
@@ -66,9 +66,9 @@ span.onclick = function() {
 }
 
 /** POSTER ONE */
-var modalFive = document.getElementById("myModalFour");
-var imgFive = document.getElementById("webAudioReel");
-var modalImgFive = document.getElementById("audioModal");
+var modalFive = document.getElementById("myModalFive");
+var imgFive = document.getElementById("flyerOne");
+var modalImgFive = document.getElementById("flyerOneModal");
 
 imgFive.onclick = function() {
     modalFive.style.display = "block";
@@ -81,3 +81,21 @@ var span = document.getElementsByClassName("closeFive") [0];
 span.onclick = function() {
     modalFive.style.display = "none";
 }
+
+/** Field Rec */
+var modalSev = document.getElementById("myModalSev");
+var imgSev = document.getElementById("fieldRec");
+var modalImgSev = document.getElementById("fieldRecModal");
+
+imgSev.onclick = function() {
+    modalSev.style.display = "block";
+    modalImgSev.src = this.src;
+    captionTextSev.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeSev") [0];
+
+span.onclick = function() {
+    modalSev.style.display = "none";
+}
+

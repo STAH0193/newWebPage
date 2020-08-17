@@ -172,68 +172,6 @@ a:active {
 	padding: 20px;
 }
 
-.one {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.two { 
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.three {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.four {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.five {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.six {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.seven {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.eight {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.nine {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.ten {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.eleven {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.twelve {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.thirteen {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.fourteen {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-.fifteen {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 300px);
-}
-
-
 #eliReel {
 	width: 300px;
 	margin-top: 20%;
@@ -246,10 +184,11 @@ a:active {
 #eliWebCaption {
 	margin: auto;
 	display: block;
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	padding: 10px 0;
 	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 .modal-content, #eliWebCaption {
 	animation-name: zoom;
@@ -269,10 +208,11 @@ a:active {
 #sigFlowCaption {
 	margin: auto;
 	display: block;
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	padding: 10px 0;
 	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .modal-content, #sigFlowCaption {
@@ -280,25 +220,41 @@ a:active {
 	animation-duration: 0.6s;
 }
 
-#lilFont {
+#bmb {
 	width: 300px;
 	height: auto;
-	margin-top: 20%;
-	margin-bottom: 20%;
 	cursor: pointer;
 }
-#lilFont:hover {
+#bmb:hover {
 	opacity: 0.7;
 }
-#sigFlowCaption {
+
+#bmbModal {
+	height: 70%;
+	width: auto;
+	cursor: pointer;
+}
+
+#bmbCaption {
 	margin: auto;
 	display: block;
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	padding: 10px 0;
 	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
-.modal-content, #lilMayorCaption {
+
+#sigFlowCaption {
+	margin: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.modal-content, #bmbCaption {
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }
@@ -316,10 +272,11 @@ a:active {
 #webAudioCaption{
 	margin: auto;
 	display: block;
-	width: 60%;
+	width: 100%;
 	text-align: center;
 	padding: 10px 0;
 	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 .modal-content, #webAudioCaption {
 	animation-name: zoom;
@@ -329,22 +286,67 @@ a:active {
 #flyerOne {
 	height: 300px;
 	width: auto;
+
+	cursor: pointer;
+}
+
+#flyerOneModal {
+	height: 70%;
+	width: auto;
 	margin-left: 20%;
 	margin-right: 20%;
 	cursor: pointer;
 }
+
 #flyerOne:hover {
 	opacity: 0.7;
 }
 #flyerOneCaption{
 	margin: auto;
 	display: block;
-	width: 60%;
+	width: 100%;
 	text-align: center;
 	padding: 10px 0;
 	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
+#fieldRec {
+	height: 300px;
+	width: auto;
+
+	cursor: pointer;
+}
+
+#fieldRecModal {
+	height: 70%;
+	width: auto;
+	cursor: pointer;
+}
+
+#fieldRec:hover {
+	opacity: 0.7;
+}
+
+#fieldRecCaption{
+	margin: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
+	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+#andrew {
+	margin-top: 15%;
+	height: auto;
+	width: 300px;
+	cursor: pointer;
+}
+
+#andrew:hover {
+	opacity: 0.7;
+}
 
 .modal {
 	display: none;
@@ -357,7 +359,7 @@ a:active {
 	height: 100%;
 	overflow: auto;
 	background-color: rbg(0,0,0);
-	background-color: rgba(255, 238, 0, 0.9);
+	background-color: rgba(255, 238, 0, 0.3);
 }
 
 .modal-content {
@@ -442,7 +444,21 @@ a:active {
 	text-decoration: none;
 	cursor: pointer;
 }
-
+.closeSev {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #ff0000;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.closeSev:hover,
+.closeSev:focus {
+	color: rgb(229, 255, 0);
+	text-decoration: none;
+	cursor: pointer;
+}
 
 @keyframes zoom {
 	from {transform:scale(0)}
