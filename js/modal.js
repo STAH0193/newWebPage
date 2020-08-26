@@ -99,3 +99,20 @@ span.onclick = function() {
     modalSev.style.display = "none";
 }
 
+/** BMB One */
+var modalEgg= document.getElementById("myModalEgg");
+var imgEgg = document.getElementById("BMBone");
+var modalImgEgg = document.getElementById("BMBmodal");
+
+imgEgg.onclick = function() {
+    modalEgg.style.display = "block";
+    modalImgEgg.src = this.src;
+    captionTextEgg.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeEgg") [0];
+
+span.onclick = function() {
+    modalEgg.style.display = "none";
+}
+
