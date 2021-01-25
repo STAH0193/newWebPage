@@ -278,10 +278,13 @@ a:active {
 	height: 150px;
 	background-color: rgba(255, 255, 255, 0.5);
 }
+
 .modal-content, #webAudioCaption {
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }
+
+
 
 #flyerOne {
 	height: 250px;
@@ -566,4 +569,32 @@ a:active {
 }
 
 
+/* LCM */
+
+#LCM {
+	height: 250px;
+	width: auto;
+	cursor: pointer;
+}
+
+#LCMModal {
+	height: 70%;
+	width: auto;
+	margin-left: 20%;
+	margin-right: 20%;
+	cursor: pointer;
+}
+
+#LCM:hover {
+	opacity: 0.7;
+}
+#LCMCaption{
+	margin: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	height: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
 

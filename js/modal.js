@@ -2,6 +2,7 @@ var modal = document.getElementById("myModalOne");
 var imgOne = document.getElementById("sigFlowReel");
 var modalImg = document.getElementById("sigFlowModal");
 
+
 imgOne.onclick = function() {
     modal.style.display = "block";
     modalImg.src = this.src;
@@ -114,5 +115,22 @@ var span = document.getElementsByClassName("closeEgg") [0];
 
 span.onclick = function() {
     modalEgg.style.display = "none";
+}
+
+/** LCM - lense phase */
+var modalNin= document.getElementById("myModalNin");
+var imgNin = document.getElementById("LCM");
+var modalImgNin = document.getElementById("LCMModal");
+
+imgNin.onclick = function() {
+    modalNin.style.display = "block";
+    modalImgNin.src = this.src;
+    captionTextNin.innerHTML = this.lastChild;
+}
+
+var span = document.getElementsByClassName("closeNin") [0];
+
+span.onclick = function() {
+    modalNin.style.display = "none";
 }
 
