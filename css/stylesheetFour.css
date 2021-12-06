@@ -1,0 +1,140 @@
+body {
+    background: rgb(128,128,128);
+background: linear-gradient(0deg, rgba(128,128,128,1) 0%, rgba(253,187,45,0) 100%);
+}
+
+#blue-box {
+    top: 100px;
+    left: 100px;
+    width: 200px; 
+    height: 200px; 
+    background: rgb(25,0,255);
+    background: linear-gradient(90deg, rgba(25,0,255,1) 0%, rgba(12,0,255,1) 50%, rgba(69,248,252,1) 100%);
+    transform: rotate(30deg);
+    position: fixed;
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+-moz-box-shadow: 0px 0px 10px 3px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+}
+
+
+
+#blue-box:hover {
+    animation-name: grow;
+    animation-duration: 2s; 
+    animation-fill-mode: forwards;
+}
+
+
+#red-box {
+    bottom: 100px;
+    left: 100px;
+    width: 200px; 
+    height: 200px; 
+    background: rgb(227,232,0);
+    background: radial-gradient(circle, rgba(227,232,0,0.7231267507002801) 0%, rgba(255,0,0,1) 100%);
+
+    border-radius: 100px;
+    position: fixed;
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+    box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
+    animation-name: shrinkGrow;
+    animation-duration: 2s;
+}
+
+
+#red-box:hover {
+    animation-name: shrink;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#yellow-box {
+    width: 400px;
+    height: 100px;
+    position: fixed;
+    z-index: -3;
+    background: rgb(244,251,63);
+    background: radial-gradient(circle, rgba(244,251,63,1) 0%, rgba(252,152,70,1) 100%);
+}
+
+#yellow-box2 {
+    width: 400px;
+    height: 100px;
+    top: 200px;
+    position: fixed;
+    z-index: -3;
+    background: rgb(244,251,63);
+    background: radial-gradient(circle, rgba(244,251,63,1) 0%, rgba(252,152,70,1) 100%);
+}
+
+#yellow-box3 {
+    width: 400px;
+    height: 100px;
+    top: 400px;
+    position: fixed;
+    z-index: -3;
+    background: rgb(244,251,63);
+    background: radial-gradient(circle, rgba(244,251,63,1) 0%, rgba(252,152,70,1) 100%);
+}
+
+#yellow-box4 {
+    width: 400px;
+    height: 100px;
+    bottom: 100px;
+    position: fixed;
+    z-index: -3;
+    background: rgb(244,251,63);
+    background: radial-gradient(circle, rgba(244,251,63,1) 0%, rgba(252,152,70,1) 100%);
+}
+
+#yellow-box5 {
+    width: 400px;
+    height: 400px;
+    bottom: 25%;
+    right: 25%;
+    position: fixed;
+    z-index: -3;
+    background: rgb(244,251,63);
+    background: radial-gradient(circle, rgba(244,251,63,1) 0%, rgba(252,152,70,1) 100%);
+    
+}
+
+#star {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    position: fixed;
+    opacity: 50%;
+    box-shadow: rgb(143, 255, 255) 30px;
+    left: 50%;
+    animation-name: star;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+}
+
+
+
+
+@keyframes grow {
+    50% {width: 250px; height: 250px; }
+    100% {width: 200px; height: 200px; background-color: green;}
+}
+
+@keyframes shrink {
+    50% {width: 150px; height: 150px;  bottom: 150px; left: 150px;}
+    100% {width: 200px; height: 200px;  background-color: purple;}
+}
+
+@keyframes shrinkGrow {
+    50% {width: 200px; height: 200px;  bottom: 150px; left: 150px;}
+    100% {width: 150px; height: 150px;  background-color: purple;}
+}
+
+@keyframes star {
+    0% {top: -300px;}
+    50% {top: 400px;}
+    100% {bottom: 0px;}
+}
