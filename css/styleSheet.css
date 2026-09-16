@@ -103,14 +103,18 @@ a:active {
 
 .groupTitle {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	
 }
 
 .eventTitle {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	
+}
+
+.groupHeader {
+	font-size: 18px;
 }
 
 .aboutParagraph {
