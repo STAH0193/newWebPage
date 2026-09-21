@@ -157,11 +157,11 @@ var VanillaTilt = (function () {
             this.gammazero = event.gamma;
             this.betazero = event.beta;
           } else {
-            this.gammazero = (event.gamma + this.lastgammazero) / 2;
-            this.betazero = (event.beta + this.lastbetazero) / 2;
+            this.gammazero = (event.gamma + this.lastgammazero) / 3;
+            this.betazero = (event.beta + this.lastbetazero) / 3;
           }
     
-          this.gyroscopeSamples -= 1;
+          this.gyroscopeSamples -= 2;
         }
     
         const totalAngleX = this.settings.gyroscopeMaxAngleX - this.settings.gyroscopeMinAngleX;
@@ -282,8 +282,8 @@ var VanillaTilt = (function () {
         return {
           tiltX: tiltX,
           tiltY: tiltY,
-          percentageX: x * 100,
-          percentageY: y * 100,
+          percentageX: x * 200,
+          percentageY: y * 200,
           angle: angle
         };
       }
@@ -369,8 +369,8 @@ var VanillaTilt = (function () {
       updateGlareSize() {
         if (this.glare) {
           Object.assign(this.glareElement.style, {
-            "width": `${this.element.offsetWidth * 2}`,
-            "height": `${this.element.offsetWidth * 2}`,
+            "width": `${this.element.offsetWidth * 3}`,
+            "height": `${this.element.offsetWidth * 3}`,
           });
         }
       }
@@ -445,10 +445,10 @@ var VanillaTilt = (function () {
           "mouse-event-element": null,
           reset: true,
           gyroscope: true,
-          gyroscopeMinAngleX: -45,
-          gyroscopeMaxAngleX: 45,
-          gyroscopeMinAngleY: -45,
-          gyroscopeMaxAngleY: 45,
+          gyroscopeMinAngleX: -65,
+          gyroscopeMaxAngleX: 65,
+          gyroscopeMinAngleY: -65,
+          gyroscopeMaxAngleY: 65,
           gyroscopeSamples: 10
         };
     

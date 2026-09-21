@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
 <link rel="stylesheet" type="text/css" href="css/mediaQueries.css">
-<link rel="stylesheet" href="css/lite-yt-embed.css" />
 <style>
     .aboutPage {
     position: absolute;
@@ -18,6 +17,94 @@
     background-image: url('images/backgroundAboutTwo.png');
     background-size: cover;
     mix-blend-mode: difference; 
+}
+
+/* --- dynamic caption box --- */
+.captionOverlay {
+    position: fixed;
+    background: rgba(255, 255, 239, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.captionOverlay.open {
+  opacity: 1;
+    visibility: visible;
+    pointer-events: auto;}
+
+.captionBox {
+    background: white;
+    color: blakck;
+    max-width: 480px;
+    width: 85%;
+    padding: 28px 32px;
+    border-radius: 6px;
+    box-shadow: 0 30px 30px rgba(255, 255, 239, 0.8);
+    cursor: default;
+    position: relative;
+    font-family: inherit;
+}
+
+.captionBox h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.captionBox p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.captionVideo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 0 16px 0;
+    display: none;
+    background: #000;
+}
+
+.captionVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.captionClose {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #aaa;
+    background: none;
+    border: none;
+}
+
+.captionClose:hover {
+    color: #fff;
+}
+
+.margin[data-caption] {
+    cursor: pointer;
 }
 </style>
 </head>
@@ -30,195 +117,149 @@
     
 
     <div class="wrapper width">
-
-            <span data-tilt>
-                 <div class="margin">
+        
+        <span data-tilt> 
+            <div class="margin">
                 <img src="images/selfie.gif" class="shadow" style="height: 250px;" >
-            
-                </div>
-             </span>
-        
-        <div class="margin">
-            <lite-youtube videoid="-aBMueHJL68" class="shadow"></iframe>
-        </div>
-        
-        <div class="margin">
-            <lite-youtube videoid="lMdTzoSXN58" class="shadow"></iframe>
-        </div>
-
-        <div class="margin">
-            <lite-youtube videoid="i4HWMb_kjpw" class="shadow"></iframe>
-        </div>
-        
-        <div class="margin">
-            <lite-youtube videoid="H-48c-gast0" class="shadow"></iframe>
-        </div>
-
-        <div class="margin">
-            <lite-youtube videoid="pXi4DimoAIY" class="shadow"></iframe>
-        </div>
-        
-                <div class="margin">
-            <img src="images/webAudioReel2.gif" id="webAudioReel" alt="Web Audio">
-            <div id="myModalFour" class="modal">
-                    <span class="closeFour">&times;</span>
-                        <a href="indigo.html" target="_blank"><img class="modal-content" id="audioModal"></a>
-                    <div id="webAudioCaption">*** is a sound reactive space designed using P5JS and the native Web Audio API library. The sounds are inspired by compositions of David Behrman and John Bischoff. Developed in the spring of 2020.  </br> </br> Click image to continue to the site.</div>
-                    </div>
-                </div>
-
-        <div class="margin">
-            <lite-youtube videoid="lylIr5Uo24E" class="shadow"></iframe>
-        </div>
-        
-        
-        <div class="margin">
-            <iframe src="https://player.vimeo.com/video/535018319" width="260" height="260" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <div class="margin">
-            <lite-youtube videoid="_zlbsO-q050" class="shadow"></iframe>
-        </div>
-        
-        <div class="margin">
-            <lite-youtube videoid="pYnfeAQAfK8" class="shadow"></iframe>
-        </div>
-  
-        
-        <div class="margin">
-            <lite-youtube videoid="IAQX2MnjQ_Q" class="shadow"></iframe></div>
-        
-        <div class="margin">
-            <lite-youtube videoid="p55-Y1g2u5g" class="shadow" ></iframe>
-        </div>
-
-        <div class="margin">
-            <lite-youtube videoid="RdiNVClT5rM" class="shadow"></iframe></div>
-
-          <div class="margin">
-            <lite-youtube videoid="_9bv28uRapA" class="shadow" ></iframe>
-        </div>
-
-
-        <div class="margin">
-            <lite-youtube videoid="_kaupz4K6TI" class="shadow"></iframe></div>
-
-        <div class="margin">
-            <img src="images/sigFlowReel2.gif" id="sigFlowReel" alt="Signal Flow 2019">
-                <div id="myModalOne" class="modal">
-                    <span class="close">&times;</span>
-                        <a href="http://signal-flow.org/archive-2019/" target="_blank">
-                            <img class="modal-content" id="sigFlowModal">
-                        </a>
-                            <div id="sigFlowCaption">
-                                This website was designed for Mills College Signal Flow festival in 2019. Illustrations by Jake Parker-Scott, font by Matt Robidoux, web design and development by Mitch Stahlmann. 
-                             </br> </br> Click image to continue to the site. 
-                            </div>
-                </div>
-        </div>
-
-        <div class="margin">
-            <img src="images/blackMarketBrassTwo.jpg" id="bmb" alt="Black Market Brass">
-            <div id="myModalThree" class="modal">
-                <span class="closeThree">&times;</span>
-
-                                <!-- Slideshow container -->
-                                <div class="slideshow-container">
-
-                                    <!-- Full-width images with number and caption text -->
-                                    <div class="mySlides fade">
-                                    <div class="numbertext">1 / 3</div>
-                                    <img src="images/blackMarketBrassTwo.jpg" style="width:100%">
-                                    <div class="text">Caption Text</div>
-                                    </div>
-                                
-                                    <div class="mySlides fade">
-                                    <div class="numbertext">2 / 3</div>
-                                    <img src="images/BMBcover.jpg" style="width:100%">
-                                    <div class="text">Caption Two</div>
-                                    </div>
-                                
-                                    <div class="mySlides fade">
-                                    <div class="numbertext">3 / 3</div>
-                                    <img src="images/BMBinside.jpg" style="width:100%">
-                                    <div class="text">Caption Three</div>
-                                    </div>
-                                
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-                                <br>
-                                
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot" onclick="currentSlide(1)"></span>
-                                    <span class="dot" onclick="currentSlide(2)"></span>
-                                    <span class="dot" onclick="currentSlide(3)"></span>
-                                </div>
-
-                <div id="bmbCaption">Cassette Design for Black Market Brass - 2019</div>
             </div>
-        </div> 
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Mega Mart (2022)" data-caption-text="" data-video="-aBMueHJL68">
+                <img src="images/mega.gif" class="shadow gif">
+            </div>
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="Briana Marela - In the Garden (2024)" data-caption-text="" data-video="H-48c-gast0">
+                <img src="images/garden.gif" class="shadow gif">
+            </div>
+        </span>
 
-        <div class="margin">
-            <lite-youtube videoid="DV-R5aboyVM" class="shadow"></iframe></div>
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Flat Earth (2022)" data-caption-text="" data-video="pXi4DimoAIY">
+                <img src="images/flat.gif" class="shadow gif">
+            </div>
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="LCM - lens phase (2020)" data-caption-text="" data-video="_zlbsO-q050">
+                <img src="images/lense.gif" class="shadow gif">
+            </div>
+        </span>
+            
+        <span data-tilt>
+            <div class="margin" data-caption="pet nap boys (2020)" data-caption-text="" data-video="pYnfeAQAfK8&t=2s">
+                <img src="images/skate.gif" class="shadow gif">
+            </div>
+        </span>
 
-        <div class="margin">
-                <img src="images/meAndAndrew.gif" id="andrew" alt="Loud Sun">
+        <span data-tilt>
+            <div class="margin" data-caption="� Live Stream � (2017)" data-caption-text="" data-video="_kaupz4K6TI">
+                <img src="images/live.gif" class="shadow gif">
+            </div>
+        </span>
 
-                </div>
-   
-        <div class="margin">
-            <lite-youtube videoid="Z5_7WQ-8sHc" class="shadow"></iframe></div>
+        <span data-tilt>
+            <div class="margin" data-caption="Soo Yeon Lyuh & Kronos Quartet - Moment 2020 (2021)" data-caption-text="" data-video="IAQX2MnjQ_Q">
+                <img src="images/hag.gif" class="shadow gif">
+            </div>
+        </span>
 
-        <div class="margin">
-            <lite-youtube videoid="aSKmtl66js4" class="shadow"></iframe></div>
+        <span data-tilt>
+                    <div class="margin" data-caption="Mitch Stahlmann - [Fragment] + [Wash] (2017)" data-caption-text="" data-video="DV-R5aboyVM">
+                <img src="images/wash.gif" class="shadow gif">
+            </div>
+        </span>
 
+        <span data-tilt>
+            <div class="margin" data-caption="Soo Yeon Lyuh & Kronos Quartet - Tattoo (2021)" data-caption-text="" data-video="_9bv28uRapA">
+                <img src="images/soo.gif" class="shadow gif">
+            </div>
+        </span>
 
-        <div class="margin">
-            <lite-youtube videoid="ltW0y328T6I" class="shadow"></iframe></div>
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Bells (field rec.)" data-caption-text="" data-video="Z5_7WQ-8sHc">
+                <img src="images/bells.gif" class="shadow gif">
+            </div>
+        </span>
 
-        <div class="margin">
-                <img src="images/fieldRecCover.jpg" id="fieldRec" alt="field rec">
-                <div id="myModalSev" class="modal">
-                        <span class="closeSev">&times;</span>
-                           <img class="modal-content" id="fieldRecModal"></a>
-                        <div id="fieldRecCaption">Cassette Design, Mixing and Recording for Field Recordings - 2018 </br> 
-                            <iframe width="50%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/445384968&"></iframe><div style="font-size: 10px; color: #ff0000;line-break: anywhere;word-break: normal;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>
-                         </div>
-                        </div>
-        </div>
-
-        <div class="margin">
-            <lite-youtube videoid="HnrhBqWkYxk" class="shadow"></iframe></div>
-
-
-        <div class="margin">
-            <img src="images/flyer2.png" id="flyerOne" alt="Flyer 1">
-            <div id="myModalFive" class="modal">
-                    <span class="closeFive">&times;</span>
-                    <img src="images/flyer2.png" id="flyerOneModal">
-                    <div id="flyerOneCaption">
-                    Poster Design - July 2019
-                    </div>
-            </div></div>
-           
-
-        <div class="margin">
-            <lite-youtube videoid="sRRo7Lcxbcs" class="shadow"></iframe></div>
-
-                
-
-        <div class="margin">
-            <lite-youtube videoid="hJBBUcwiAuY"  class="shadow"></iframe></div>
-    </div>
-
+      
     <script src="js/lite-yt-embed.js"></script>
     <script src="js/tilt.jquery.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/slideshow.js"></script>
+
+        <div class="captionOverlay" id="captionOverlay">
+        <div class="captionBox" id="captionBox">
+            <button class="captionClose" id="captionClose">&times;</button>
+            <div class="captionVideo" id="captionVideo"></div>
+            <h3 id="captionTitle"></h3>
+            <p id="captionText"></p>
+        </div>
+    </div>
+        <script>
+        (function () {
+            var overlay = document.getElementById('captionOverlay');
+            var box = document.getElementById('captionBox');
+            var titleEl = document.getElementById('captionTitle');
+            var textEl = document.getElementById('captionText');
+            var videoEl = document.getElementById('captionVideo');
+            var closeBtn = document.getElementById('captionClose');
+
+            function openCaption(title, text, videoId) {
+                titleEl.textContent = title || '';
+                textEl.textContent = text || '';
+
+                if (videoId) {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.youtube.com/embed/' + videoId;
+                    iframe.title = title || '';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.allowFullscreen = true;
+                    videoEl.innerHTML = '';
+                    videoEl.appendChild(iframe);
+                    videoEl.style.display = 'block';
+                } else {
+                    videoEl.innerHTML = '';
+                    videoEl.style.display = 'none';
+                }
+
+                overlay.classList.add('open');
+            }
+
+            function closeCaption() {
+                overlay.classList.remove('open');
+                // stop playback by clearing the iframe once the box has faded out
+                setTimeout(function () {
+                    if (!overlay.classList.contains('open')) {
+                        videoEl.innerHTML = '';
+                    }
+                }, 250);
+            }
+
+            document.querySelectorAll('.margin[data-caption]').forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    openCaption(
+                        el.getAttribute('data-caption'),
+                        el.getAttribute('data-caption-text'),
+                        el.getAttribute('data-video')
+                    );
+                });
+            });
+
+            // click outside the box closes it; click inside the box does not
+            overlay.addEventListener('click', closeCaption);
+            box.addEventListener('click', function (e) { e.stopPropagation(); });
+            closeBtn.addEventListener('click', closeCaption);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeCaption();
+            });
+        })();
+    </script>
 </body>
-<footer> ©2020 Mitch Stahlmann</footer>
+<footer> ©2026 Mitch Stahlmann</footer>
 
 </html>

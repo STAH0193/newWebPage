@@ -3,12 +3,11 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 }
 footer {
-	margin-left: 40px;
-	margin-top: 50px;
-	margin-bottom: 0;
-	position: absolute;
 	font-size: 12px;
+  text-align: center; /* centers the text horizontally */
+  padding: 1rem 0;
 }
+
 .backArrow {
 	position: fixed;
 	width: 10px;
@@ -60,6 +59,7 @@ h1 {
 	margin-bottom: 20px;
 	margin-left: 40px;
 	width: 40%;
+	margin-top: 10px;
 }
 
 .eventWrapper {
@@ -115,6 +115,7 @@ a:active {
 
 .groupHeader {
 	font-size: 18px;
+	margin-top: 30px;
 }
 
 .aboutParagraph {
@@ -123,7 +124,9 @@ a:active {
 	font-size: 14px;
 }
 
-
+.groupText {
+	
+}
 
 .groupText:hover {
 	background-color: yellow;
@@ -166,6 +169,10 @@ a:active {
 	padding-bottom: 50px;
 }
 
+#aboutMedia {
+	grid-column: span 2;
+}
+
 .shadow {
 	box-shadow: #ff6d6d 15px 15px 15px;
 }
@@ -174,6 +181,11 @@ a:active {
 	width: 300px;
 	height: 300px;
 	padding: 20px;
+}
+
+.gif {
+	width: 250px;
+	height: 250px;
 }
 
 #eliReel {
