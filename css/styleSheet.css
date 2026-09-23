@@ -162,7 +162,8 @@ a:active {
 
 .wrapper {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 	padding-top: 50px;
@@ -613,4 +614,3 @@ a:active {
 	height: 150px;
 	background-color: rgba(255, 255, 255, 0.5);
 }
-
