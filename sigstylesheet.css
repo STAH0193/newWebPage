@@ -1,0 +1,299 @@
+body {
+  font-family: "Source Serif Pro", serif;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 15px;
+  height: 30px;
+  width: 100%;
+  font-size: 30px;
+}
+
+.about {
+  position: absolute;
+  bottom: 40%;
+  left: 20px;
+  font-size: 35px;
+}
+.about2 {
+  position: absolute;
+  bottom: 40%;
+  right: 20px;
+  font-size: 35px;
+}
+
+.sf-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 35%;
+  width: 700px;
+  height: auto;
+  cursor: move;
+}
+
+.sf-chairs {
+  position: absolute;
+  left: 40%;
+  margin-right: auto;
+  top: 22%;
+  width: 400px;
+  height: auto;
+}
+
+.sf-chairs-2 {
+  position: absolute;
+  top: 25%;
+  right: 43%;
+  width: 400px;
+  height: auto;
+  cursor: move;
+}
+
+.sf-chairs-3 {
+  position: absolute;
+  top: 80%;
+  right: -5%;
+  width: 400px;
+  height: auto;
+  cursor: move;
+}
+.sf-chairs-4 {
+  position: absolute;
+  top: 144%;
+  left: -8%;
+  width: 400px;
+  height: auto;
+  cursor: move;
+}
+
+.sf-light {
+  position: absolute;
+  top: 28%;
+  left: 30%;
+  width: 200px;
+  height: auto;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
+
+.sf-light2 {
+  position: absolute;
+  top: 29%;
+  left: 40%;
+  width: 200px;
+  height: auto;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+  z-index: -1;
+}
+.sf-light3 {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  width: 200px;
+  height: auto;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
+
+.sf-light2 {
+  position: absolute;
+  top: 29%;
+  left: 40%;
+  width: 200px;
+  height: auto;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+  z-index: -1;
+}
+.sf-light3 {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  width: 200px;
+  height: auto;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
+
+.sf-light-4 {
+  position: fixed;
+  left: -10%;
+  top: 50px;
+}
+
+.sf-wall-1 {
+  position: absolute;
+  top: 80%;
+  left: -10%;
+  height: 200px;
+  transform: rotate(-5deg);
+  width: auto;
+  z-index: -2;
+}
+.sf-wall-2 {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  height: 200px;
+  transform: rotate(0deg);
+  width: auto;
+  z-index: -2;
+}
+.sf-wall-3 {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  height: 200px;
+  transform: rotate(-2deg);
+  width: auto;
+  z-index: -2;
+}
+.sf-wall-4 {
+  position: fixed;
+  top: 85%;
+  right: -10%;
+  height: 200px;
+  transform: rotate(5deg);
+  width: auto;
+  z-index: -2;
+}
+.sf-wall-5 {
+  position: fixed;
+  top: 83%;
+  left: 5%;
+  height: 200px;
+  transform: rotate(0deg);
+  width: auto;
+  z-index: -2;
+}
+
+.sf-about {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 88%;
+  left: 30px;
+}
+
+.sf-about-text {
+  position: absolute;
+  height: auto;
+  right: 10px;
+  width: 70%;
+  font-family: "Lora", serif;
+  font-size: 28px;
+  top: 120%;
+  z-index: 1;
+}
+
+.about-p-1 {
+}
+
+.about-p-2 {
+}
+
+.sf-lineup {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  top: 175%;
+  left: 30px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 0;
+  display: table;
+}
+
+.sf-lineup-table-desktop {
+  position: absolute;
+  table-layout: fixed;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: auto;
+  width: 90%;
+  height: 500px;
+  font-family: "Lora", serif;
+  font-size: 24px;
+  top: 195%;
+
+  text-align: ;
+}
+
+table.sf-lineup-table-mobile {
+  position: absolute;
+  width: 100%;
+  font-family: "Lora", serif;
+  font-size: 30px;
+  top: 200%;
+  text-align: left;
+}
+
+.sf-mills-college {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  z-index: 2;
+  top: 40%;
+}
+
+.sf-dates {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  z-index: 2;
+  top: 55%;
+}
+
+#thu {
+  width: 100px;
+  height: auto;
+}
+
+#fri {
+  width: 100px;
+  height: auto;
+}
+#sat {
+  width: 100px;
+  height: auto;
+}
+#sun {
+  width: 100px;
+  height: auto;
+}
+
+#sub-location {
+  font-size: 20px;
+  width: 200%;
+}
+
+#sf-map-title {
+  position: absolute;
+  width: 475px;
+  height: auto;
+  top: 263%;
+  left: 20px;
+}
+#sf-map {
+  position: absolute;
+  left: 10%;
+  width: 65%;
+  height: auto;
+  top: 280%;
+  padding-bottom: 50px;
+}
+
+.first {
+}
+
+.second {
+}

@@ -163,7 +163,15 @@ The festival is curated and organized by Sally Decker, Brendan Glasson, Briana M
 
 
 
-<footer> ©2026 Mitch Stahlmann</footer>
+<footer style=" position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1001; /* keeps it above captionOverlay, which is 1000 */
+    margin: 0;
+    padding: 8px 0;"> ©2026 Mitch Stahlmann</footer>
 
 <script>
 
