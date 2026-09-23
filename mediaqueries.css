@@ -1,0 +1,150 @@
+@media only screen and (max-width: 425px) {
+  .sf-logo {
+    display: block;
+    width: 300px;
+    margin-right: 20px;
+  }
+
+  .sf-light {
+    margin-left: 17px;
+    top: 30%;
+    width: 100px;
+    z-index: -2;
+  }
+
+  .sf-light2 {
+    display: none;
+  }
+
+  .sf-light3 {
+    display: none;
+    top: 20%;
+  }
+
+  .sf-light-4 {
+    z-index: -2;
+    left: -20%;
+    top: 0%;
+    width: 150px;
+  }
+
+  #sf-chairs-id {
+    display: none;
+  }
+
+  #sf-chairs-id-2 {
+    left: 15%;
+    top: 15%;
+    width: 200px;
+  }
+
+  #sf-chairs-id-3 {
+    display: none;
+  }
+
+  #sf-chairs-id-4 {
+    left: 40%;
+    top: 10%;
+    width: 200px;
+  }
+
+  #sf-chairs-id-5 {
+    top: 156%;
+    width: 200px;
+    left: 12%;
+  }
+
+  #sf-chairs-id-6 {
+    width: 200px;
+    top: 155%;
+  }
+
+  .sf-wall-1 {
+    display: none;
+  }
+
+  .sf-wall-2 {
+    display: none;
+  }
+
+  .sf-wall-3 {
+    display: none;
+  }
+
+  .sf-wall-4 {
+  }
+
+  .sf-wall-5 {
+    top: 65%;
+  }
+
+  .sf-mills-college {
+    width: 300px;
+    top: 55%;
+  }
+
+  .sf-dates {
+    width: 300px;
+    top: 65%;
+  }
+
+  .sf-about {
+    top: 85%;
+    width: 200px;
+    left: 0px;
+  }
+
+  .sf-about-text {
+    width: 80%;
+    top: 100%;
+    margin-left: 20%;
+    font-size: 20px;
+    text-align: right;
+  }
+
+  .about-p-1 {
+    margin-left: 0%;
+    text-indent: 50px;
+  }
+
+  .about-p-2 {
+    margin-left: 0%;
+  }
+
+  .sf-lineup {
+    top: 172%;
+    width: 200px;
+    left: 0%;
+  }
+
+  .sf-lineup-table-mobile {
+    text-align: center;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .tr {
+    margin-top: 5%;
+  }
+
+  .sf-lineup-table-desktop {
+    display: none;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  #sf-map-title {
+    top: 405%;
+    width: 200px;
+    left: 0%;
+  }
+  #sf-map {
+    top: 420%;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .sf-lineup-table-mobile {
+    display: none;
+  }
+}

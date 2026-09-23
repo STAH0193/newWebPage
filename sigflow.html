@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <title>Signal Flow 2019</title>
+    <link rel="stylesheet" type="text/css" href="sigstylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="mediaqueries.css" />
+  </head>
+
+  <body>
+
+    <style>
+      #modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(252, 255, 189, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 1.5s ease;
+        pointer-events: none;
+      }
+      #modal-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #modal-box {
+        background: #fff;
+        color: #111;
+        max-width: 90%;
+        width: 400px;
+        padding: 24px;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        font-family: sans-serif;
+      }
+      #modal-close {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        background: none;
+        border: none;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+        color: #333;
+      }
+      #modal-close:hover {
+        color: #000;
+      }
+      #modal-box h2 {
+        margin-top: 0;
+      }
+      #modal-ok {
+        margin-top: 16px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        background: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+      #modal-ok:hover {
+        background: #000;
+      }
+    </style>
+  </head>
+<body>
+ 
+<div id="modal-overlay">
+  <div id="modal-box">
+    <button id="modal-close" aria-label="Close">&times;</button>
+    <h2>Signal Flow</h2>
+    <p>This webpage was developed for the 2019 Mills College MFA thesis concert, Signal Flow. The page features movable skteches, hand drawn by Jake Parker-Scott, and font by Matt Robidoux, and web development by Mitch Stahlmann </p>
+    <button id="modal-ok">OK</button>
+  </div>
+</div>
+ 
+<script>
+  (function () {
+    var overlay = document.getElementById('modal-overlay');
+ 
+    function openModal() {
+      // allow initial styles to apply before adding the class,
+      // so the transition actually animates
+      requestAnimationFrame(function () {
+        overlay.classList.add('visible');
+      });
+    }
+ 
+    function closeModal() {
+      overlay.classList.remove('visible');
+    }
+ 
+    window.addEventListener('load', openModal);
+ 
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('modal-ok').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script> 
+
+
+
+
+    <img src="images/sf-logo.png" class="sf-logo" id="sf-logo-id"/>
+
+    <img src="images/light1r.png" class="sf-light" id="sf-lights-id" />
+    <img src="images/light2r.png" class="sf-light2" id="sf-lights-id-2" />
+    <img src="images/light3r.png" class="sf-light3" />
+    <img src="images/light3r.png" class="sf-light-4" />
+
+    <img src="images/mills-college.png" class="sf-mills-college" />
+    <img src="images/sf-dates.png" class="sf-dates" />
+
+    <img src="images/chair1b.png" class="sf-chairs" id="sf-chairs-id" />
+    <img src="images/chair1g.png" class="sf-chairs-2" id="sf-chairs-id-2" />
+    <img src="images/chair1g.png" class="sf-chairs-2" id="sf-chairs-id-3" />
+    <img src="images/chair1b.png" class="sf-chairs" id="sf-chairs-id-4" />
+
+    <img src="images/wall1y.png" class="sf-wall-1" id="sf-walls-id" />
+    <img src="images/wall1y.png" class="sf-wall-2" id="sf-walls-id-2" />
+    <img src="images/wall1y.png" class="sf-wall-3" id="sf-walls-id-3" />
+    <img src="images/wall1y.png" class="sf-wall-4" id="sf-walls-id-4" />
+    <img src="images/wall1y.png" class="sf-wall-5" id="sf-walls-id-5" />
+
+    <img src="images/about.png" class="sf-about second" />
+
+    <div class="sf-about-text">
+      <p>
+        <b>Signal Flow</b> is an annual 4-day music festival held at Mills
+        College.
+      </p>
+      <p class="about-p-1">
+        Since its inception, Signal Flow has only grown and has become
+        emblematic of the experimental spirit of the Music Department and the
+        Center for Contemporary Music.
+      </p>
+      <p class="about-p-2">We hope to see you there this March.</p>
+    </div>
+
+    <img src="images/chair1g.png" class="sf-chairs-3" id="sf-chairs-id-5" />
+    <img src="images/chair1b.png" class="sf-chairs-4" id="sf-chairs-id-6" />
+
+    <img src="images/lineup.png" class="sf-lineup third" />
+
+    <table class="sf-lineup-table-desktop">
+      <tr>
+        <td><img src="images/thu.png" id="thu" /></td>
+        <td><img src="images/fri.png" id="fri" /></td>
+        <td><img src="images/sat.png" id="sat" /></td>
+        <td><img src="images/sun.png" id="sun" /></td>
+      </tr>
+      <tr>
+        <td>Tony Gennaro *</td>
+        <td>Lee Hodel ‡</td>
+        <td>Nayoung Jung *</td>
+        <td>Matt Robidoux *</td>
+      </tr>
+
+      <tr>
+        <td>Daniel Barboza *</td>
+        <td>Rodrigo Barriga *</td>
+        <td>Curt Brown *</td>
+        <td>Sean Keenan *</td>
+      </tr>
+
+      <tr>
+        <td>Rodolfo Córdova *</td>
+        <td>Sally Decker **</td>
+        <td>Nick Grieneisen *</td>
+        <td>Jess Tambellini *</td>
+      </tr>
+
+      <tr>
+        <td>Emily Cardwell *</td>
+        <td>Hil Jaeger **</td>
+        <td>Stasie Fomalgaut*</td>
+        <td>Benjamin Westfall *</td>
+      </tr>
+
+      <tr>
+        <td>Chet Bentley †</td>
+        <td>Amina Kirby **</td>
+        <td>Maria Siino *</td>
+        <td>Tim Russell ‡‡</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" style="word-spacing: 6px; font-size: 16px;" id="sub-location">*Littlefield Concert Hall | **Lisser Theater | †Mills Chapel | ‡Littlefield Concerthall Foyer | ‡‡Mills Student Union</td>
+      </tr>
+    </table>
+
+    <table class="sf-lineup-table-mobile">
+      <tr><td><img src="images/thu.png" id="thu" /></td></tr>
+      <tr><td>Tony Gennaro *</td></tr>
+      <tr><td>Daniel Barboza *</td></tr>
+      <tr><td>Rodolfo Córdova *</td></tr>
+      <tr><td>Emily Cardwell *</td></tr>
+      </tr><td>Chet Bentley †</td></tr>
+        
+      
+      <tr><td style="padding-top: 40px;"><img src="images/fri.png" id="fri" /></td></tr>
+      <tr><td>Lee Hodel ‡</td></tr>
+      <tr><td>Rodrigo Barriga *</td></tr>
+      <tr><td>Sally Decker **</td></tr>
+      <tr><td>Hil Jaeger **</td></tr>
+      <tr><td>Amina Kirby **</td></tr>
+
+      <tr><td style="padding-top: 40px;"><img src="images/sat.png" id="sat" /></td></tr>
+      <tr><td>Nayoung Jung *</td></tr>
+      <tr><td>Curt Brown *</td></tr>
+      <tr><td>Nick Grieneisen *</td></tr>
+      <tr><td>Stasie Fomalgaut*</td></tr>
+      <tr><td>Maria Siino *</td></tr>
+
+      <tr><td style="padding-top: 40px;"><img src="images/sun.png" id="sun" /></td></tr>
+      <tr><td>Matt Robidoux *</td></tr>
+      <tr><td>Sean Keenan *</td></tr>
+      <tr><td>Jess Tambellini *</td></tr>  
+      <tr><td>Benjamin Westfall *</td></tr> 
+      <tr><td>Tim Russell ‡‡</td></tr>
+      <tr><td style="word-spacing: 3px; font-size: 10px; padding-top: 40px; text-align: center;" id="sub-location">*Littlefield Concert Hall | **Lisser Theater | †Mills Chapel | ‡Littlefield Concerthall Foyer | ‡‡Mills Student Union</td></tr>
+    </table>
+
+    <img src="images/map.png" id="sf-map-title" class="fourth" />
+    <img src="images/mills_map.png" id="sf-map" />
+    <script src="reposition.js"></script>
+    <script src="drag.js"></script>
+  </body>
+</html>

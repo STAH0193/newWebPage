@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>media - mitch stahlmann</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<link rel="stylesheet" type="text/css" href="css/mediaQueries.css">
+<style>
+    .aboutPage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('images/backgroundAboutTwo.png');
+    background-size: cover;
+    mix-blend-mode: difference; 
+}
+
+/* --- dynamic caption box --- */
+.captionOverlay {
+    position: fixed;
+    background: rgba(255, 255, 239, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.captionOverlay.open {
+  opacity: 1;
+    visibility: visible;
+    pointer-events: auto;}
+
+.captionBox {
+    background: white;
+    color: blakck;
+    max-width: 480px;
+    width: 85%;
+    padding: 28px 32px;
+    border-radius: 6px;
+    box-shadow: 0 30px 30px rgba(255, 255, 239, 0.8);
+    cursor: default;
+    position: relative;
+    font-family: inherit;
+}
+
+.captionBox h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.captionBox p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.captionVideo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 0 16px 0;
+    display: none;
+    background: #000;
+}
+
+.captionVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.captionClose {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #aaa;
+    background: none;
+    border: none;
+}
+
+.captionClose:hover {
+    color: #fff;
+}
+
+.margin[data-caption] {
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body style="background-image: url('images/TWO.png'); background-size: fill; ">
+
+ <div class="backButton">
+        <a href="index.html">⥳</a>
+    </div>
+    
+
+    <div class="wrapper width">
+        
+        <span data-tilt> 
+            <div class="margin">
+                <img src="images/selfie.gif" class="shadow" style="height: 250px;" >
+            </div>
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Mega Mart (2022)" data-caption-text="Written, produced & performed by Mitch Stahlmann.
+Directed, shot & edited by Mitch Stahlmann. Additional videography by Kristian Dahlbom. " data-video="-aBMueHJL68">
+                <img src="images/mega.gif" class="shadow gif">
+            </div>
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="Briana Marela - In the Garden (2024)" data-caption-text="Written, produced & performed by Briana Marela.
+Directed, shot & edited by Mitch Stahlman. Additional videography by Kristian Dahlbom." data-video="H-48c-gast0">
+                <img src="images/garden.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Flat Earth (2022)" data-caption-text="Written, produced & performed by Mitch Stahlmann.
+Directed, shot & edited by Mitch Stahlmann." data-video="pXi4DimoAIY">
+                <img src="images/flat.gif" class="shadow gif">
+            </div>
+        </span>
+        
+        <span data-tilt>
+            <div class="margin" data-caption="LCM - lens phase (2020)" data-caption-text="Written, produced & performed by Lynn Avery, Cole Pulice, and Mitch Stahlmann. Directed, & edited by Mitch Stahlmann. HTML/CSS by Mitch Stahlmann. Live Paint, Margritte32 by Nicholas Grieniesen." data-video="_zlbsO-q050">
+                <img src="images/lense.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+        <div class="margin"><a href="indigo.html" target="_blank"><img src="images/webAudio.gif" class="shadow gif"></a>
+        </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="pet nap boys (2022)" data-caption-text="Directed, shot & edited by Mitch Stahlman. Additional videography by Aaron Wallick." data-video="pYnfeAQAfK8&t=2s">
+                <img src="images/skate.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="� Live Stream � (2017)" data-caption-text="Originally installed at the Walker Art Center in 2017 as a part of Eric Larson's Meme Town. LCD Panel, fish tank, Raspberi Pi 3, HTML/CSS. Videography by Joe Berns. Edited by Mitch Stahlmann. " data-video="_kaupz4K6TI">
+                <img src="images/live.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+        <div class="margin"><a href="sigflow.html" target="_blank"><img src="images/sigFlowReel2.gif" class="shadow gif"></a>
+        </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="Soo Yeon Lyuh & Kronos Quartet - Moment 2020 (2021)" data-caption-text="Composed by Soo Yeon Lyuh. Performed by Soo Yeon Lyuh & Kronos Quartet. Mixed and Produced by Mitch Stahlmann. Videography by Danny Kim. Edited by Mitch Stahlmann" data-video="IAQX2MnjQ_Q">
+                <img src="images/hag.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+                    <div class="margin" data-caption="Mitch Stahlmann - [Fragment] + [Wash] (2017)" data-caption-text="Written, produced, performed, shot, and edited by Mitch Stahlmann." data-video="DV-R5aboyVM">
+                <img src="images/wash.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="Soo Yeon Lyuh & Kronos Quartet - Tattoo (2021)" data-caption-text="omposed by Soo Yeon Lyuh. Performed by Soo Yeon Lyuh & Kronos Quartet. Mixed and Produced by Mitch Stahlmann. Videography by Danny Kim. Edited by Mitch Stahlmann and Danny Kim. Additional videography by Colin Giles" data-video="_9bv28uRapA">
+                <img src="images/soo.gif" class="shadow gif">
+            </div>
+        </span>
+
+        <span data-tilt>
+            <div class="margin" data-caption="Mitch Stahlmann - Bells (field rec.)" data-caption-text="Written, produced, performed, shot, and edited by Mitch Stahlmann." data-video="Z5_7WQ-8sHc">
+                <img src="images/bells.gif" class="shadow gif">
+            </div>
+        </span>
+
+      
+    <script src="js/lite-yt-embed.js"></script>
+    <script src="js/tilt.jquery.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/slideshow.js"></script>
+
+        <div class="captionOverlay" id="captionOverlay">
+        <div class="captionBox" id="captionBox">
+            <button class="captionClose" id="captionClose">&times;</button>
+            <div class="captionVideo" id="captionVideo"></div>
+            <h3 id="captionTitle"></h3>
+            <p id="captionText"></p>
+        </div>
+    </div>
+        <script>
+        (function () {
+            var overlay = document.getElementById('captionOverlay');
+            var box = document.getElementById('captionBox');
+            var titleEl = document.getElementById('captionTitle');
+            var textEl = document.getElementById('captionText');
+            var videoEl = document.getElementById('captionVideo');
+            var closeBtn = document.getElementById('captionClose');
+
+            function openCaption(title, text, videoId) {
+                titleEl.textContent = title || '';
+                textEl.textContent = text || '';
+
+                if (videoId) {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.youtube.com/embed/' + videoId;
+                    iframe.title = title || '';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.allowFullscreen = true;
+                    videoEl.innerHTML = '';
+                    videoEl.appendChild(iframe);
+                    videoEl.style.display = 'block';
+                } else {
+                    videoEl.innerHTML = '';
+                    videoEl.style.display = 'none';
+                }
+
+                overlay.classList.add('open');
+            }
+
+            function closeCaption() {
+                overlay.classList.remove('open');
+                // stop playback by clearing the iframe once the box has faded out
+                setTimeout(function () {
+                    if (!overlay.classList.contains('open')) {
+                        videoEl.innerHTML = '';
+                    }
+                }, 250);
+            }
+
+            document.querySelectorAll('.margin[data-caption]').forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    openCaption(
+                        el.getAttribute('data-caption'),
+                        el.getAttribute('data-caption-text'),
+                        el.getAttribute('data-video')
+                    );
+                });
+            });
+
+            // click outside the box closes it; click inside the box does not
+            overlay.addEventListener('click', closeCaption);
+            box.addEventListener('click', function (e) { e.stopPropagation(); });
+            closeBtn.addEventListener('click', closeCaption);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeCaption();
+            });
+        })();
+    </script>
+</body>
+<footer style=" position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-20%);
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;"> ©2026 Mitch Stahlmann</footer>
+
+</html>
