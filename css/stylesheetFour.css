@@ -17,47 +17,100 @@ body {
     z-index: 3;
 }
 
-#blue-box {
-    top: 25px;
-    left: 100px;
-    width: 50px; 
-    height: 50px; 
-    background: rgb(25,0,255);
-    background: radial-gradient(circle, rgba(25,0,255,1) 0%, rgba(12,0,255,1) 1%, rgba(69,248,252,1) 100%);
+/* Squiggle faders: waveform blend and release time, evenly spaced
+   across a row that starts just clear of #red-box and keeps 25px of
+   breathing room on both the left and right edges of the screen.
+   (The pen-size fader lives separately, see #pen-fader-container
+   below.) Shared look via .fader-track/.fader-dot; positioning is
+   handled by the .fader-row flex container, not per-fader ids. */
+.fader-row {
     position: fixed;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
--moz-box-shadow: 0px 0px 10px 3px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
-box-shadow: 0px 0px 10px 4px rgba(148,148,148,1),-4px -6px 15px 4px rgba(119,119,119,1),5px 6px 15px 3px rgba(165,165,165,1);
-}
-
-#blue-box2 {
     top: 30px;
-    left: 165px;
-    width: 40px; 
-    height: 40px; 
-
-    background: rgb(70,45,255);
-    background: radial-gradient(circle, rgba(70,45,255,1) 0%, rgba(60,45,255,1) 1%, rgba(120,250,253,1) 100%);
-    position: fixed;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(158,158,158,1),-4px -6px 15px 4px rgba(129,129,129,1),5px 6px 15px 3px rgba(175,175,175,1);
-    -moz-box-shadow: 0px 0px 10px 3px rgba(158,158,158,1),-4px -6px 15px 4px rgba(129,129,129,1),5px 6px 15px 3px rgba(175,175,175,1);
-    box-shadow: 0px 0px 10px 4px rgba(158,158,158,1),-4px -6px 15px 4px rgba(129,129,129,1),5px 6px 15px 3px rgba(175,175,175,1);
+    left: 110px; /* clears #red-box (25px + 60px wide) plus a 25px gap */
+    right: 25px;
+    justify-content: space-between;
+    z-index: 3;
 }
 
-#blue-box3 {
-    top: 35px;
-    left: 220px;
-    width: 30px; 
-    height: 30px; 
-    background: rgb(225,90,255);
-    background: radial-gradient(circle, rgba(115,90,255,1) 0%, rgba(108,90,255,1) 1%, rgba(170,252,254,1) 100%);
-    position: fixed;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(168,168,168,1),-4px -6px 15px 4px rgba(139,139,139,1),5px 6px 15px 3px rgba(185,185,185,1);
-    -moz-box-shadow: 0px 0px 10px 3px rgba(168,168,168,1),-4px -6px 15px 4px rgba(139,139,139,1),5px 6px 15px 3px rgba(185,185,185,1);
-    box-shadow: 0px 0px 10px 4px rgba(168,168,168,1),-4px -6px 15px 4px rgba(139,139,139,1),5px 6px 15px 3px rgba(185,185,185,1);
+.fader-svg {
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+    touch-action: none;
+    overflow: visible;
 }
 
+.fader-track {
+    fill: none;
+    stroke: rgba(255,255,255,0.6);
+    stroke-width: 2;
+    stroke-linecap: round;
+    filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.4));
+}
 
+.fader-dot {
+    fill: #1a6dff;
+    filter: drop-shadow(0px 0px 6px rgba(26,109,255,0.9));
+    transition: r 0.15s ease-out;
+}
+
+.fader-dot:hover,
+.fader-dot:active {
+    r: 9;
+}
+
+/* Pen-size fader: vertical, placed just right of #color-picker, and
+   sized in JS (sketch.js) to span the color picker's full height. */
+#pen-fader-container {
+    position: fixed;
+    top: 125px; /* matches #color-picker's top */
+    z-index: 4;
+}
+
+.fader-svg-vertical {
+    width: 140px;
+    padding-left: 100px;
+    cursor: pointer;
+    touch-action: none;
+    overflow: visible;
+}
+
+/* Color picker: 8 circles in two rows of 4 along the top.
+   Top row sets the pen (stroke) color, no outer shadow.
+   Bottom row sets the shadow color, transparent fill + outer shadow. */
+#color-picker {
+    position: fixed;
+    top: 125px;
+    left: 25px;
+    display: grid;
+    grid-auto-rows: 50px;
+    gap: 25px;
+    z-index: 5;
+}
+
+.color-circle {
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.color-circle.pen-circle {
+    box-shadow: none;
+}
+
+.color-circle.shadow-circle {
+    background: transparent;
+}
+
+.fader-dot.tremolo-dot {
+    fill: #1aff5c;
+    filter: drop-shadow(0px 0px 6px rgba(26,255,92,0.9));
+}
+
+#tremolo-fader {
+    margin-left: 25px;
+}
 
 #red-box {
     bottom: 100px;

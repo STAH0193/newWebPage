@@ -143,10 +143,46 @@
   })();
 </script>
 
-<div id="blue-box"></div>
-<div id="blue-box2"></div>
-<div id="blue-box3"></div>
 <div id="red-box"></div>
+
+<div id="color-picker">
+  <div class="color-circle pen-circle" data-color="#fcba03" style="background:#fcba03;"></div>
+    <div class="color-circle shadow-circle" data-color="#fcba03" style="box-shadow: 0 0 8px 4px #fcba03;"></div>
+  <div class="color-circle pen-circle" data-color="#03fcdb" style="background:#03fcdb;"></div>
+    <div class="color-circle shadow-circle" data-color="#03fcdb" style="box-shadow: 0 0 8px 4px #03fcdb;"></div>
+  <div class="color-circle pen-circle" data-color="#ae00ff" style="background:#ae00ff;"></div>
+    <div class="color-circle shadow-circle" data-color="#ae00ff" style="box-shadow: 0 0 8px 4px #ae00ff;"></div>
+  <div class="color-circle pen-circle" data-color="red" style="background:red;"></div>
+    <div class="color-circle shadow-circle" data-color="red" style="box-shadow: 0 0 8px 4px red;"></div>
+
+
+
+
+</div>
+
+<div class="fader-row">
+
+
+  <svg id="release-fader" class="fader-svg" viewBox="0 0 170 40">
+    <path id="release-track" class="fader-track"
+          d="M5,20 C20,5 30,35 45,20 C60,5 70,35 85,20 C100,5 110,35 125,20 C140,5 150,35 165,20" />
+    <circle id="release-dot" class="fader-dot" r="7" cx="5" cy="20" />
+  </svg>
+</div>
+
+<div id="pen-fader-container">
+  <svg id="pen-fader" class="fader-svg-vertical" viewBox="0 0 40 170">
+    <path id="pen-track" class="fader-track"
+          d="M20,5 C5,20 35,30 20,45 C5,60 35,70 20,85 C5,100 35,110 20,125 C5,140 35,150 20,165" />
+    <circle id="pen-dot" class="fader-dot" r="7" cx="20" cy="165" />
+  </svg>
+    <svg id="tremolo-fader" class="fader-svg" viewBox="0 0 170 40">
+    <path id="tremolo-track" class="fader-track"
+          d="M5,20 C20,5 30,35 45,20 C60,5 70,35 85,20 C100,5 110,35 125,20 C140,5 150,35 165,20" />
+    <circle id="tremolo-dot" class="fader-dot tremolo-dot" r="7" cx="5" cy="20" />
+  </svg>
+</div>
+
 <div id="yellow-box"></div>
 <div id="indigo"><img = src="images/indigo.png"></div>
 

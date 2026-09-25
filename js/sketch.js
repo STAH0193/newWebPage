@@ -1,8 +1,7 @@
-let randomShadow = ['#fcba03', '#03fcdb', '#ae00ff', 'red'];
-let shadow = randomShadow[Math.floor(Math.random() * randomShadow.length)];
-
-let randomColor = ['#fcba03', '#03fcdb', '#ae00ff'];
-let col = randomColor[Math.floor(Math.random() * randomColor.length)];
+// Pen (stroke) color and shadow color, set by the color-picker circles.
+// Default to the first swatch in each row.
+let penColor = '#fcba03';
+let shadowColor = '#fcba03';
 
 let boxX = 200;
 let boxY = 200;
@@ -16,17 +15,23 @@ let currentSize = baseSize;
 let targetSize = baseSize;
 
 let topOffset = 100;
+let leftOffset = 10; // keep the canvas clear of the color picker & pen fader
+
+// Range driven by the pen-size fader below.
+let PEN_MIN = 10;
+let PEN_MAX = 100;
+let strokeWeightValue = 60;
 
 function setup() {
 
-  let c = createCanvas(windowWidth, windowHeight - topOffset);
-  c.position(0, topOffset);
+  let c = createCanvas(windowWidth - leftOffset, windowHeight - topOffset);
+  c.position(leftOffset, topOffset);
   drawingContext.shadowBlur = 50;
-  drawingContext.shadowColor = shadow;
+  drawingContext.shadowColor = shadowColor;
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight - topOffset);
+  resizeCanvas(windowWidth - leftOffset, windowHeight - topOffset);
 }
 
 
@@ -54,22 +59,11 @@ document.getElementById('red-box').onclick = function() {
 
   if (mouseIsPressed) {
     strokeCap(ROUND);
-    strokeWeight(60);
-    stroke(col);
+    strokeWeight(strokeWeightValue);
+    stroke(penColor);
     line(pmouseX, pmouseY, mouseX, mouseY);
 
   } else {
-    noStroke();
-  }
-
-  if (mouseIsPressed) {
-    strokeCap(ROUND);
-    strokeWeight(60);
-    stroke(col);
-    line(pmouseX, pmouseY, mouseX, mouseY);
-    
-  } else {
-    noFill(); 
     noStroke();
   }
 
@@ -92,74 +86,62 @@ redBox.addEventListener('mouseleave', function() {
   redBox.style.background = 'radial-gradient(circle, rgba(227,232,0,0.72) 0%, rgba(255,0,0,1) 100%)';
 });
 
-document.getElementById('blue-box').onclick = function() {
-  drawingContext.shadowBlur = 50;
-  drawingContext.shadowColor = shadow;
-  
-    let randomColor = ['#fcba03', '#03fcdb', '#ae00ff'];
-    let randomShadow = ['#fcba03', '#03fcdb', '#ae00ff', 'red'];
-    col = randomColor[Math.floor(Math.random() * randomColor.length)];
-    shadow = randomShadow[Math.floor(Math.random() * randomShadow.length)];
+// ---- COLOR PICKER -----------------------------------------------------------
+// Top row (pen-circle) sets the drawing/stroke color.
+// Bottom row (shadow-circle) sets the canvas shadow color.
+document.querySelectorAll('.pen-circle').forEach(function (el) {
+  el.addEventListener('click', function () {
+    penColor = el.dataset.color;
+  });
+});
+
+document.querySelectorAll('.shadow-circle').forEach(function (el) {
+  el.addEventListener('click', function () {
+    shadowColor = el.dataset.color;
+    if (typeof drawingContext !== 'undefined') {
+      drawingContext.shadowColor = shadowColor;
+    }
+  });
+});
+
+// ---- PEN SIZE FADER --------------------------------------------------------
+// Replaces the old blue-box clicks. Reuses the initSquiggleFader helper
+// defined in synth.js; wait for DOMContentLoaded so it doesn't matter
+// which of synth.js / sketch.js is included first in the page.
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof initSquiggleFader !== 'function') return;
+
+  // Stretch the vertical pen fader to match the rendered height of the
+  // color picker, so it spans all 8 color-circle rows edge to edge.
+  function sizePenFader() {
+    var picker = document.getElementById('color-picker');
+    var penSvg = document.getElementById('pen-fader');
+    if (picker && penSvg) {
+      penSvg.style.height = picker.offsetHeight + 'px';
+    }
   }
+  sizePenFader();
+  window.addEventListener('resize', sizePenFader);
 
-document.getElementById('blue-box2').onclick = function() {
-  drawingContext.shadowBlur = 50;
-  drawingContext.shadowColor = shadow;
-  
-    let randomColor = ['#fcba03', '#03fcdb', '#ae00ff'];
-    let randomShadow = ['#fcba03', '#03fcdb', '#ae00ff', 'red'];
-    col = randomColor[Math.floor(Math.random() * randomColor.length)];
-    shadow = randomShadow[Math.floor(Math.random() * randomShadow.length)];
+  // Default to the old default weight (60px) expressed as a percent
+  // of the 10-100 range.
+  var defaultPercent = (60 - PEN_MIN) / (PEN_MIN - PEN_MAX);
+
+  initSquiggleFader('pen-fader', 'pen-track', 'pen-dot', function (percent) {
+    strokeWeightValue = PEN_MAX + percent * (PEN_MIN - PEN_MAX);
+  }, defaultPercent, 'vertical');
+});
+// ---- VOLUME FADER SIZING ---------------------------------------------------
+// The vertical fader (now volume, wired up in synth.js) is stretched to
+// match the rendered height of the color picker.
+document.addEventListener('DOMContentLoaded', function () {
+  function sizePenFader() {
+    var picker = document.getElementById('color-picker');
+    var penSvg = document.getElementById('pen-fader');
+    if (picker && penSvg) {
+      penSvg.style.height = picker.offsetHeight + 'px';
+    }
   }
-
-  document.getElementById('blue-box3').onclick = function() {
-  drawingContext.shadowBlur = 50;
-  drawingContext.shadowColor = shadow;
-  
-    let randomColor = ['#fcba03', '#03fcdb', '#ae00ff'];
-    let randomShadow = ['#fcba03', '#03fcdb', '#ae00ff', 'red'];
-    col = randomColor[Math.floor(Math.random() * randomColor.length)];
-    shadow = randomShadow[Math.floor(Math.random() * randomShadow.length)];
-  }
-
-const blueBox = document.getElementById('blue-box');
-const blueBox2 = document.getElementById('blue-box2');
-const blueBox3 = document.getElementById('blue-box3');
-
-
-
-blueBox.addEventListener('mouseenter', function() {
-  blueBox.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox.style.width = '55px';
-  blueBox.style.height = '55px';
-});
-
-blueBox.addEventListener('mouseleave', function() {
-  blueBox.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox.style.width = '50px';
-  blueBox.style.height = '50px';
-});
-
-blueBox2.addEventListener('mouseenter', function() {
-  blueBox2.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox2.style.width = '45px';
-  blueBox2.style.height = '45px';
-});
-
-blueBox2.addEventListener('mouseleave', function() {
-  blueBox2.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox2.style.width = '40px';
-  blueBox2.style.height = '40px';
-});
-
-blueBox3.addEventListener('mouseenter', function() {
-  blueBox3.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox3.style.width = '35px';
-  blueBox3.style.height = '35px';
-});
-
-blueBox3.addEventListener('mouseleave', function() {
-  blueBox3.style.transition = 'width 1s ease-out, height 1s ease-out';
-  blueBox3.style.width = '30px';
-  blueBox3.style.height = '30px';
+  sizePenFader();
+  window.addEventListener('resize', sizePenFader);
 });
